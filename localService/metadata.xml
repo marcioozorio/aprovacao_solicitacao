@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZSUPERMERCADO_512_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="AdminPrecoCaixa" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="MATNR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dtalt" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="DTALT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hralt" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="HRALT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preco" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" sap:unicode="false" sap:label="PRECO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Useralt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="USERALT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AdminSolicAlteracaoPreco" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="MATNR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dtsolic" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="DTSOLIC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hrsolic" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="HRSOLIC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="STATUS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dtacao" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="DTACAO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hracao" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="HRACAO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Useracao" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="USERACAO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrecoNovo" Type="Edm.Decimal" Nullable="false" Precision="46" Scale="19" sap:unicode="false" sap:label="Preço Novo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Material" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MATNR"/>
+                </Key>
+                <Property Name="MATNR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="MATNR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BISMT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material Antigo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZSUPERMERCADO_512_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="AdminPrecoCaixaSet" EntityType="ZSUPERMERCADO_512_SRV.AdminPrecoCaixa" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AdminSolicAlteracaoPrecoSet" EntityType="ZSUPERMERCADO_512_SRV.AdminSolicAlteracaoPreco" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaterialSet" EntityType="ZSUPERMERCADO_512_SRV.Material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://lnl-s4h.opustech.com.br:5200/sap/opu/odata/sap/ZSUPERMERCADO_512_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://lnl-s4h.opustech.com.br:5200/sap/opu/odata/sap/ZSUPERMERCADO_512_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
